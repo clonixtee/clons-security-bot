@@ -7,98 +7,84 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
 <style>
 /* Reset */
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Roboto', sans-serif; background:#0f0f0f; color:#fff; line-height:1.6; scroll-behavior:smooth; overflow-x:hidden; }
-a { text-decoration:none; color:inherit; }
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Roboto',sans-serif;background:#0f0f0f;color:#fff;line-height:1.6;scroll-behavior:smooth;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
 
 /* Gradient Background */
-body::before {
+body::before{
   content:'';
-  position:fixed; top:0; left:0; width:100%; height:100%;
+  position:fixed;top:0;left:0;width:100%;height:100%;
   background: linear-gradient(270deg, #00ffff, #7289da, #ff00ff, #00ff00);
   background-size: 800% 800%;
   animation: gradientBG 25s ease infinite;
   z-index:-1; opacity:0.15;
 }
-@keyframes gradientBG {
+@keyframes gradientBG{
   0%{background-position:0% 50%}
   50%{background-position:100% 50%}
   100%{background-position:0% 50%}
 }
 
 /* Header */
-header { display:flex; justify-content:space-between; align-items:center; padding:1rem 5%; background:#111; position:sticky; top:0; z-index:1000; box-shadow:0 2px 15px rgba(0,0,0,0.5); }
-header h1 { font-family:'Poppins', sans-serif; color:#00ffff; letter-spacing:1px; }
-nav a { margin-left:2rem; font-weight:600; transition:0.3s; }
-nav a:hover { color:#00ffff; text-shadow:0 0 5px #00ffff; }
+header{display:flex;justify-content:space-between;align-items:center;padding:1rem 5%;background:#111;position:sticky;top:0;z-index:1000;box-shadow:0 2px 15px rgba(0,0,0,0.5);}
+header h1{font-family:'Poppins',sans-serif;color:#00ffff;letter-spacing:1px;}
+nav a{margin-left:2rem;font-weight:600;transition:0.3s;}
+nav a:hover{color:#00ffff;text-shadow:0 0 5px #00ffff;}
 
 /* Hero Section */
-.hero { display:flex; flex-direction:column; justify-content:center; align-items:center; height:90vh; text-align:center; position:relative; background:url('https://images.unsplash.com/photo-1581090700227-1f18d5f430c0?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat; }
-.hero::after { content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); }
-.hero h2 { font-size:3rem; color:#00ffff; margin-bottom:1rem; }
-.hero p { font-size:1.2rem; margin-bottom:2rem; max-width:600px; }
-.btn { background:#00ffff; color:#000; padding:0.8rem 1.8rem; border-radius:30px; font-weight:bold; transition:0.3s; display:inline-block; box-shadow:0 0 15px #00ffff; }
-.btn:hover { background:#00d4d4; transform:translateY(-2px); box-shadow:0 0 25px #00d4d4; }
+.hero{display:flex;flex-direction:column;justify-content:center;align-items:center;height:90vh;text-align:center;position:relative;background:url('https://i.imgur.com/9QJ5wY2.png') center/cover no-repeat;}
+.hero::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);}
+.hero h2{font-size:3rem;color:#00ffff;margin-bottom:1rem;}
+.hero p{font-size:1.2rem;margin-bottom:2rem;max-width:600px;}
+.btn{background:#00ffff;color:#000;padding:0.8rem 1.8rem;border-radius:30px;font-weight:bold;transition:0.3s;display:inline-block;box-shadow:0 0 15px #00ffff;}
+.btn:hover{background:#00d4d4;transform:translateY(-2px);box-shadow:0 0 25px #00d4d4;}
 
 /* Section Titles */
-section { padding:5rem 5%; position:relative; }
-.section-title { font-size:2rem; margin-bottom:2rem; text-align:center; color:#00ffff; text-shadow:0 0 10px #00ffff; }
+section{padding:5rem 5%;position:relative;}
+.section-title{font-size:2rem;margin-bottom:2rem;text-align:center;color:#00ffff;text-shadow:0 0 10px #00ffff;}
 
-/* About Me */
-.about { display:flex; flex-wrap:wrap; gap:2rem; align-items:center; justify-content:center; }
-.about img { width:300px; border-radius:50%; border:3px solid #00ffff; box-shadow:0 0 20px #00ffff; }
-.about-text { max-width:600px; }
-.about-text p { margin-bottom:1rem; }
+/* Features Section */
+.features{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;margin-top:2rem;}
+.feature-card{background:#1a1a1a;padding:1.5rem;border-radius:15px;width:220px;text-align:center;box-shadow:0 0 15px #00ffff22;transition:0.3s;}
+.feature-card:hover{transform:translateY(-5px);box-shadow:0 0 25px #00ffff55;}
+.feature-card img{width:50px;margin-bottom:1rem;}
+.feature-card h4{margin-bottom:0.5rem;}
 
-/* Skills */
-.skills { display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; }
-.skill { background:#1a1a1a; padding:1rem 1.5rem; border-radius:15px; font-weight:600; transition:0.3s; box-shadow:0 0 10px #00ffff33; }
-.skill:hover { background:#00ffff; color:#000; box-shadow:0 0 20px #00ffff; }
-.skill-bar { margin-top:0.5rem; background:#222; border-radius:10px; overflow:hidden; height:15px; }
-.skill-bar-inner { height:100%; background:#00ffff; width:0%; transition:1.2s; }
+/* Stats Section */
+.stats{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;margin-top:3rem;}
+.stat-card{background:#1a1a1a;padding:1.5rem;border-radius:15px;width:180px;text-align:center;box-shadow:0 0 15px #00ffff22;transition:0.3s;}
+.stat-card:hover{transform:translateY(-5px);box-shadow:0 0 25px #00ffff55;}
+.stat-card h3{font-size:2rem;color:#00ffff;}
 
 /* Projects */
-.projects { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2rem; }
-.project { background:#1a1a1a; padding:1.5rem; border-radius:15px; transition:0.3s; box-shadow:0 0 15px #00ffff22; }
-.project:hover { transform:translateY(-5px); box-shadow:0 0 25px #00ffff55; }
-.project h3 { margin-bottom:1rem; }
-.project p { font-size:0.95rem; margin-bottom:1rem; }
-.project a { font-weight:600; color:#00ffff; }
-.project a:hover { text-decoration:underline; }
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;}
+.project{background:#1a1a1a;padding:1.5rem;border-radius:15px;transition:0.3s;box-shadow:0 0 15px #00ffff22;}
+.project:hover{transform:translateY(-5px);box-shadow:0 0 25px #00ffff55;}
+.project h3{margin-bottom:1rem;}
+.project p{font-size:0.95rem;margin-bottom:1rem;}
+.project a{font-weight:600;color:#00ffff;}
+.project a:hover{text-decoration:underline;}
 
-/* Bot Features Section */
-.features { display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; margin-top:2rem; }
-.feature-card { background:#1a1a1a; padding:1.5rem; border-radius:15px; width:220px; text-align:center; box-shadow:0 0 15px #00ffff22; transition:0.3s; }
-.feature-card:hover { transform:translateY(-5px); box-shadow:0 0 25px #00ffff55; }
-.feature-card img { width:50px; margin-bottom:1rem; }
-.feature-card h4 { margin-bottom:0.5rem; }
-
-/* Discord Bot Section */
-.discord { background:#111; padding:5rem 5%; text-align:center; border-radius:20px; box-shadow:0 0 20px #00ffff33; margin-top:2rem; }
-.discord h2 { color:#7289da; margin-bottom:1rem; }
-.discord p { margin-bottom:2rem; font-size:1.1rem; }
+/* Discord Section */
+.discord{background:#111;padding:5rem 5%;text-align:center;border-radius:20px;box-shadow:0 0 20px #00ffff33;margin-top:2rem;}
+.discord h2{color:#7289da;margin-bottom:1rem;}
+.discord p{margin-bottom:2rem;font-size:1.1rem;}
 
 /* Testimonials */
-.testimonials { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem; }
-.testimonial { background:#1a1a1a; padding:1.5rem; border-radius:15px; font-style:italic; box-shadow:0 0 15px #00ffff22; }
+.testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;}
+.testimonial{background:#1a1a1a;padding:1.5rem;border-radius:15px;font-style:italic;box-shadow:0 0 15px #00ffff22;}
 
 /* Contact */
-.contact { text-align:center; }
-.contact p { margin-bottom:1rem; }
+.contact{text-align:center;}
+.contact p{margin-bottom:1rem;}
 
 /* Footer */
-footer { text-align:center; padding:2rem; background:#111; border-top:1px solid #222; font-size:0.9rem; }
+footer{text-align:center;padding:2rem;background:#111;border-top:1px solid #222;font-size:0.9rem;}
 
 /* Animations */
-.fade-in { opacity:0; transform:translateY(30px); transition:1s ease-out; }
-.fade-in.visible { opacity:1; transform:translateY(0); }
-
-@media(max-width:768px) {
-  .hero h2 { font-size:2.2rem; }
-  .hero p { font-size:1rem; }
-  .about { flex-direction:column; text-align:center; }
-  .about img { margin:0 auto; }
-}
+.fade-in{opacity:0;transform:translateY(30px);transition:1s ease-out;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
 </style>
 </head>
 <body>
@@ -106,73 +92,18 @@ footer { text-align:center; padding:2rem; background:#111; border-top:1px solid 
 <header>
   <h1>ClonixTees Security Bot</h1>
   <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
     <a href="#features">Features</a>
+    <a href="#stats">Stats</a>
+    <a href="#projects">Projects</a>
     <a href="#discord">Bot</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h2>Welcome to ClonixTees Security Bot Portfolio</h2>
-  <p>Professional Discord bot for server security, automation, and moderation.</p>
+  <h2>ClonixTees Security Bot</h2>
+  <p>Advanced Discord bot for server security, moderation, automation, and analytics.</p>
   <a href="#discord" class="btn">Invite Bot</a>
-</section>
-
-<section id="about">
-  <h2 class="section-title">About Me</h2>
-  <div class="about fade-in">
-    <img src="https://i.pravatar.cc/300?img=12" alt="Profile Picture">
-    <div class="about-text">
-      <p>Hello! I'm a developer specializing in creating secure and efficient Discord bots. My bots focus on moderation, automation, and server security.</p>
-      <p>With experience in JavaScript, Node.js, Python, and API integrations, I create reliable, scalable bots for communities of all sizes.</p>
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <h2 class="section-title">Skills</h2>
-  <div class="skills fade-in">
-    <div class="skill">JavaScript / Node.js
-      <div class="skill-bar"><div class="skill-bar-inner" style="width:90%"></div></div>
-    </div>
-    <div class="skill">Python / Discord.py
-      <div class="skill-bar"><div class="skill-bar-inner" style="width:85%"></div></div>
-    </div>
-    <div class="skill">Bot Security
-      <div class="skill-bar"><div class="skill-bar-inner" style="width:95%"></div></div>
-    </div>
-    <div class="skill">Server Moderation
-      <div class="skill-bar"><div class="skill-bar-inner" style="width:90%"></div></div>
-    </div>
-    <div class="skill">API Integration
-      <div class="skill-bar"><div class="skill-bar-inner" style="width:80%"></div></div>
-    </div>
-    <div class="skill">Database (MongoDB, SQLite)
-      <div class="skill-bar"><div class="skill-bar-inner" style="width:85%"></div></div>
-    </div>
-  </div>
-</section>
-
-<section id="projects">
-  <h2 class="section-title">Projects</h2>
-  <div class="projects fade-in">
-    <div class="project">
-      <h3>ClonixTees Security Bot</h3>
-      <p>A full-featured Discord bot designed for server security, moderation, and automation.</p>
-      <a href="https://discord.com/oauth2/authorize?client_id=1420172346638995499&permissions=8&integration_type=0&scope=bot" target="_blank">Invite Bot</a>
-    </div>
-    <div class="project">
-      <h3>Server Analytics Dashboard</h3>
-      <p>Dashboard for monitoring server activity, member engagement, and security logs.</p>
-    </div>
-    <div class="project">
-      <h3>Auto-Moderation Scripts</h3>
-      <p>Scripts to automatically detect spam, scams, and unwanted content to keep communities safe.</p>
-    </div>
-  </div>
 </section>
 
 <section id="features">
@@ -201,9 +132,37 @@ footer { text-align:center; padding:2rem; background:#111; border-top:1px solid 
   </div>
 </section>
 
+<section id="stats">
+  <h2 class="section-title">Bot Statistics</h2>
+  <div class="stats fade-in">
+    <div class="stat-card"><h3 id="servers">0</h3><p>Servers</p></div>
+    <div class="stat-card"><h3 id="users">0</h3><p>Users</p></div>
+    <div class="stat-card"><h3 id="commands">0</h3><p>Commands Run</p></div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="section-title">Projects</h2>
+  <div class="projects fade-in">
+    <div class="project">
+      <h3>ClonixTees Security Bot</h3>
+      <p>Full-featured Discord bot designed for server security and automation.</p>
+      <a href="https://discord.com/oauth2/authorize?client_id=1420172346638995499&permissions=8&integration_type=0&scope=bot" target="_blank">Invite Bot</a>
+    </div>
+    <div class="project">
+      <h3>Server Analytics Dashboard</h3>
+      <p>Track server activity, member engagement, and security logs.</p>
+    </div>
+    <div class="project">
+      <h3>Auto-Moderation Scripts</h3>
+      <p>Detect spam, scams, and unwanted content automatically.</p>
+    </div>
+  </div>
+</section>
+
 <section class="discord" id="discord">
   <h2>Invite ClonixTees Security Bot</h2>
-  <p>Make sure to <strong>put the bot's role all the way to the top</strong> so it works properly in your server.</p>
+  <p>Ensure the bot's role is all the way to the top for proper functionality.</p>
   <a href="https://discord.com/oauth2/authorize?client_id=1420172346638995499&permissions=8&integration_type=0&scope=bot" class="btn">Invite Bot</a>
 </section>
 
@@ -218,8 +177,8 @@ footer { text-align:center; padding:2rem; background:#111; border-top:1px solid 
 <section id="contact">
   <h2 class="section-title">Contact</h2>
   <div class="contact fade-in">
-    <p>Email: <a href="mailto:clonhub@gmail.com">clonhub@gmail.com</a></p>
-    <p>Discord: <strong>ClonixTees#1234</strong></p>
+    <img src="https://i.imgur.com/o7D8rKU.png" alt="Anime Bot Avatar" style="width:150px;border-radius:50%;margin-bottom:1rem;box-shadow:0 0 20px #00ffff;">
+    <p>Discord: <strong>xsai9</strong></p>
   </div>
 </section>
 
@@ -229,24 +188,31 @@ footer { text-align:center; padding:2rem; background:#111; border-top:1px solid 
 
 <script>
 // Scroll animations
-const faders = document.querySelectorAll('.fade-in');
-const observer = new IntersectionObserver((entries, obs) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('visible');
-      obs.unobserve(entry.target);
-    }
+const faders=document.querySelectorAll('.fade-in');
+const observer=new IntersectionObserver((entries,obs)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('visible'); obs.unobserve(entry.target);}
   });
-},{ threshold:0.2 });
-faders.forEach(fader => observer.observe(fader));
+},{threshold:0.2});
+faders.forEach(fader=>observer.observe(fader));
 
-// Skill bar animation
-window.addEventListener('scroll', ()=>{
-  document.querySelectorAll('.skill-bar-inner').forEach(bar=>{
-    const rect = bar.getBoundingClientRect();
-    if(rect.top < window.innerHeight - 50){ bar.style.width = bar.getAttribute('style').split(':')[1]; }
-  });
+// Animated counters
+function animateCounter(id,target){
+  let el=document.getElementById(id);
+  let count=0;
+  let step=Math.ceil(target/100);
+  let interval=setInterval(()=>{
+    count+=step;
+    if(count>=target){count=target; clearInterval(interval);}
+    el.innerText=count;
+  },20);
+}
+window.addEventListener('load',()=>{
+  animateCounter('servers',125);
+  animateCounter('users',4820);
+  animateCounter('commands',10234);
 });
 </script>
+
 </body>
 </html>
