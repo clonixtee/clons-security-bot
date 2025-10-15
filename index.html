@@ -11,11 +11,11 @@
 body{font-family:'Roboto',sans-serif;background:#0f0f0f;color:#fff;line-height:1.6;scroll-behavior:smooth;overflow-x:hidden;}
 a{text-decoration:none;color:inherit;}
 
-/* Gradient Background */
+/* Animated Gradient Background */
 body::before{
   content:'';
   position:fixed;top:0;left:0;width:100%;height:100%;
-  background: linear-gradient(270deg, #00ffff, #7289da, #ff00ff, #00ff00);
+  background: linear-gradient(270deg,#00ffff,#7289da,#ff00ff,#00ff00);
   background-size: 800% 800%;
   animation: gradientBG 25s ease infinite;
   z-index:-1; opacity:0.15;
@@ -33,11 +33,11 @@ nav a{margin-left:2rem;font-weight:600;transition:0.3s;}
 nav a:hover{color:#00ffff;text-shadow:0 0 5px #00ffff;}
 
 /* Hero Section */
-.hero{display:flex;flex-direction:column;justify-content:center;align-items:center;height:90vh;text-align:center;position:relative;background:url('https://i.imgur.com/9QJ5wY2.png') center/cover no-repeat;}
+.hero{display:flex;flex-direction:column;justify-content:center;align-items:center;height:90vh;text-align:center;position:relative;overflow:hidden;background:#0f0f0f;}
 .hero::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);}
-.hero h2{font-size:3rem;color:#00ffff;margin-bottom:1rem;}
-.hero p{font-size:1.2rem;margin-bottom:2rem;max-width:600px;}
-.btn{background:#00ffff;color:#000;padding:0.8rem 1.8rem;border-radius:30px;font-weight:bold;transition:0.3s;display:inline-block;box-shadow:0 0 15px #00ffff;}
+.hero h2{font-size:3rem;color:#00ffff;margin-bottom:1rem;z-index:1;}
+.hero p{font-size:1.2rem;margin-bottom:2rem;max-width:600px;z-index:1;}
+.btn{background:#00ffff;color:#000;padding:0.8rem 1.8rem;border-radius:30px;font-weight:bold;transition:0.3s;display:inline-block;box-shadow:0 0 15px #00ffff;z-index:1;}
 .btn:hover{background:#00d4d4;transform:translateY(-2px);box-shadow:0 0 25px #00d4d4;}
 
 /* Section Titles */
@@ -46,7 +46,7 @@ section{padding:5rem 5%;position:relative;}
 
 /* Features Section */
 .features{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;margin-top:2rem;}
-.feature-card{background:#1a1a1a;padding:1.5rem;border-radius:15px;width:220px;text-align:center;box-shadow:0 0 15px #00ffff22;transition:0.3s;}
+.feature-card{background:#1a1a1a;padding:1.5rem;border-radius:15px;width:220px;text-align:center;box-shadow:0 0 15px #00ffff22;transition:0.3s;cursor:pointer;}
 .feature-card:hover{transform:translateY(-5px);box-shadow:0 0 25px #00ffff55;}
 .feature-card img{width:50px;margin-bottom:1rem;}
 .feature-card h4{margin-bottom:0.5rem;}
@@ -77,6 +77,7 @@ section{padding:5rem 5%;position:relative;}
 
 /* Contact */
 .contact{text-align:center;}
+.contact img{width:150px;border-radius:50%;margin-bottom:1rem;box-shadow:0 0 20px #00ffff;}
 .contact p{margin-bottom:1rem;}
 
 /* Footer */
@@ -100,7 +101,7 @@ footer{text-align:center;padding:2rem;background:#111;border-top:1px solid #222;
   </nav>
 </header>
 
-<section class="hero">
+<section class="hero fade-in">
   <h2>ClonixTees Security Bot</h2>
   <p>Advanced Discord bot for server security, moderation, automation, and analytics.</p>
   <a href="#discord" class="btn">Invite Bot</a>
@@ -112,7 +113,7 @@ footer{text-align:center;padding:2rem;background:#111;border-top:1px solid #222;
     <div class="feature-card">
       <img src="https://img.icons8.com/ios-filled/50/00ffff/shield.png"/>
       <h4>Anti-Spam</h4>
-      <p>Automatically detects spam messages and mutes offenders.</p>
+      <p>Detect spam messages and automatically mute offenders.</p>
     </div>
     <div class="feature-card">
       <img src="https://img.icons8.com/ios-filled/50/00ffff/robot-2.png"/>
@@ -122,12 +123,12 @@ footer{text-align:center;padding:2rem;background:#111;border-top:1px solid #222;
     <div class="feature-card">
       <img src="https://img.icons8.com/ios-filled/50/00ffff/api.png"/>
       <h4>Auto Roles</h4>
-      <p>Assign roles automatically based on server rules or activity.</p>
+      <p>Assign roles automatically based on server activity.</p>
     </div>
     <div class="feature-card">
       <img src="https://img.icons8.com/ios-filled/50/00ffff/bar-chart.png"/>
-      <h4>Server Analytics</h4>
-      <p>View member stats and activity logs in real-time.</p>
+      <h4>Analytics</h4>
+      <p>View server statistics, member engagement, and logs.</p>
     </div>
   </div>
 </section>
@@ -150,12 +151,12 @@ footer{text-align:center;padding:2rem;background:#111;border-top:1px solid #222;
       <a href="https://discord.com/oauth2/authorize?client_id=1420172346638995499&permissions=8&integration_type=0&scope=bot" target="_blank">Invite Bot</a>
     </div>
     <div class="project">
-      <h3>Server Analytics Dashboard</h3>
-      <p>Track server activity, member engagement, and security logs.</p>
+      <h3>Analytics Dashboard</h3>
+      <p>Track server activity, member engagement, and security logs in real-time.</p>
     </div>
     <div class="project">
       <h3>Auto-Moderation Scripts</h3>
-      <p>Detect spam, scams, and unwanted content automatically.</p>
+      <p>Automatically detect spam, scams, and unwanted content to keep servers safe.</p>
     </div>
   </div>
 </section>
@@ -177,7 +178,7 @@ footer{text-align:center;padding:2rem;background:#111;border-top:1px solid #222;
 <section id="contact">
   <h2 class="section-title">Contact</h2>
   <div class="contact fade-in">
-    <img src="https://i.imgur.com/o7D8rKU.png" alt="Anime Bot Avatar" style="width:150px;border-radius:50%;margin-bottom:1rem;box-shadow:0 0 20px #00ffff;">
+    <img src="https://i.pravatar.cc/150?img=36" alt="Anime Bot Avatar">
     <p>Discord: <strong>xsai9</strong></p>
   </div>
 </section>
@@ -187,7 +188,7 @@ footer{text-align:center;padding:2rem;background:#111;border-top:1px solid #222;
 </footer>
 
 <script>
-// Scroll animations
+// Scroll fade-in
 const faders=document.querySelectorAll('.fade-in');
 const observer=new IntersectionObserver((entries,obs)=>{
   entries.forEach(entry=>{
@@ -198,14 +199,8 @@ faders.forEach(fader=>observer.observe(fader));
 
 // Animated counters
 function animateCounter(id,target){
-  let el=document.getElementById(id);
-  let count=0;
-  let step=Math.ceil(target/100);
-  let interval=setInterval(()=>{
-    count+=step;
-    if(count>=target){count=target; clearInterval(interval);}
-    el.innerText=count;
-  },20);
+  let el=document.getElementById(id),count=0,step=Math.ceil(target/100);
+  let interval=setInterval(()=>{count+=step;if(count>=target){count=target;clearInterval(interval);}el.innerText=count;},20);
 }
 window.addEventListener('load',()=>{
   animateCounter('servers',125);
